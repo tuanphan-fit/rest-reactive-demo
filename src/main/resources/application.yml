@@ -1,0 +1,10 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    password: 1234
+  hibernate-orm:
+    database:
+        generation: drop and create
+    log:
+      format-sql: true
+      sql: true
