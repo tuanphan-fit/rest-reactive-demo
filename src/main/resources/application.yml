@@ -8,3 +8,5 @@ quarkus:
     log:
       format-sql: true
       sql: true
+  jackson:
+    fail-on-empty-beans: false

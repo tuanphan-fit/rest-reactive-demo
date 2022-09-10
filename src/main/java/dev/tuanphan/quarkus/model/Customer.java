@@ -6,20 +6,27 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+
 @Getter
 @Setter
 @ToString
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity(name = QiosEntity.Customer.ENTITY)
+@Table(name = QiosEntity.Customer.TABLE)
 public class Customer {
     @Id
     @GeneratedValue
     private Long id;
 
+    @Column(name = QiosEntity.Customer.CUSTOMER_NUMBER, unique = true, nullable = false)
     private String customerNumber;
+
+    @Column(name = QiosEntity.Customer.FIRST_NAME)
     private String firstName;
+
+    @Column(name = QiosEntity.Customer.LAST_NAME)
     private String lastName;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
