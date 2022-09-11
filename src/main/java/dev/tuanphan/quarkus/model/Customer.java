@@ -1,5 +1,6 @@
 package dev.tuanphan.quarkus.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -31,10 +32,12 @@ public class Customer {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
+    @JsonIgnore
     private List<Address> addresses = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
+    @JsonIgnore
     private List<Contract> contracts = new ArrayList<>();
 
     public Customer addAddress(Address address){

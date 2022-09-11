@@ -2,6 +2,8 @@ quarkus:
   datasource:
     db-kind: postgresql
     password: 1234
+    reactive:
+      url: jdbc:postgresql://localhost:5432/quarkus
   hibernate-orm:
     database:
         generation: drop and create

@@ -1,5 +1,6 @@
 package dev.tuanphan.quarkus.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -26,6 +27,7 @@ public class Address {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @ToString.Exclude
+    @JsonIgnore
     private Customer customer;
 
     @Override
